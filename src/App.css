@@ -632,21 +632,12 @@ body {
     gap: 0.8rem;
   }
   
-  .nav-btn {
-    font-size: 0.85rem;
-    padding: 0.6rem 1.2rem;
-    flex: 1;
-    min-width: 120px;
-  }
-  
   .pricing-nav-btn {
     width: 100%;
     min-width: unset;
     max-width: 400px;
     font-size: 1rem;
     padding: 1rem 1.5rem;
-    order: -1;
-    margin-bottom: 1rem;
   }
   
   .stats-grid,
