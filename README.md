@@ -1,11 +1,16 @@
-# React + TypeScript + Vite
+# Senior-Lock Consulting
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**"Equipping and protecting seniors as AI hits critical mass."**
 
-Currently, two official plugins are available:
+A comprehensive digital security consulting SaaS platform designed specifically for seniors, offering protection against emerging AI-driven threats, online scams, and digital security vulnerabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Professional consulting services for senior digital security
+- AI threat assessment and protection strategies
+- Personalized security training and education
+- 24/7 support and monitoring services
+- User-friendly, senior-focused interface design
 
 ## Expanding the ESLint configuration
 
