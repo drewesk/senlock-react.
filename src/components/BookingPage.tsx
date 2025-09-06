@@ -212,7 +212,7 @@ const BookingPage: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .booking-page {
           min-height: 100vh;
           background: linear-gradient(135deg, #0a0e27 0%, #1a1d47 25%, #2d3561 50%, #0f172a 100%);

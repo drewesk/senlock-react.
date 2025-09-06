@@ -8,7 +8,7 @@ const InteractiveCursor: React.FC = () => {
 
   // Debounce resize events to improve performance
   const debounce = useCallback((func: Function, wait: number) => {
-    let timeout: NodeJS.Timeout
+    let timeout: number
     return (...args: any[]) => {
       clearTimeout(timeout)
       timeout = setTimeout(() => func.apply(null, args), wait)
