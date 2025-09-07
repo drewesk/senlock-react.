@@ -58,8 +58,9 @@ const InteractiveCursor: React.FC = () => {
         const x = col * spacingX + spacingX / 2
         const y = row * spacingY // Start first row at absolute top
         
-        // Calculate opacity gradient: top row most visible, bottom row barely visible
-        const opacity = 1 - (row / (desiredRows - 1)) * 0.95 // From 1.0 to 0.05
+        // Calculate opacity gradient: top row most visible, bottom row barely visible (more pronounced)
+        const t = row / (desiredRows - 1)
+        const opacity = (1 - t) * (1 - t) * 0.98 + 0.02 // Ease-out quadratic: 1.0 -> 0.02
         
         arrows.push({ x, y, opacity, key: `${row}-${col}` })
       }
@@ -109,7 +110,7 @@ const InteractiveCursor: React.FC = () => {
             <path
               d="M2 6 L8 12 L14 6"
               fill="none"
-              stroke={`rgba(255, 255, 255, ${arrow.opacity})`}
+              stroke={`rgba(26, 70, 194, ${arrow.opacity})`}
               strokeWidth="2.4"
               strokeLinecap="round"
               strokeLinejoin="round"

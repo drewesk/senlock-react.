@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lockBody" x1="18" y1="28" x2="46" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Shackle -->
+  <path d="M24 28V22a8 8 0 0 1 16 0v6" stroke="#c7d2fe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Body -->
+  <rect x="18" y="28" width="28" height="22" rx="6" fill="url(#lockBody)"/>
+  <!-- Keyhole -->
+  <circle cx="32" cy="40" r="3.2" fill="#0a1224" opacity="0.9"/>
+  <rect x="31" y="43" width="2" height="5.5" rx="1" fill="#0a1224" opacity="0.9"/>
+</svg>
+

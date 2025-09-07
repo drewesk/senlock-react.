@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple monochrome mask for Safari pinned tab -->
+  <path d="M24 28V22a8 8 0 0 1 16 0v6" stroke="#000000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="18" y="28" width="28" height="22" rx="6" fill="#000000"/>
+</svg>
+

@@ -66,149 +66,32 @@ const BookingPage: React.FC = () => {
       <div className="booking-container">
         {/* Header */}
         <div className="booking-header">
-          <h1 className="booking-title">
-            <span className="ai-glow">AI-Powered</span> Consultation Booking
-          </h1>
+          <h1 className="booking-title">Setup a Free Session</h1>
           <p className="booking-subtitle">
-            Schedule your personalized digital security consultation with our AI-enhanced experts
+            A friendly 30-minute call. Pick a time that works for you.
           </p>
         </div>
 
-        <div className="booking-content">
-          {/* Calendar Section */}
-          <div className="calendar-section">
-            <h2 className="section-title">
-              <span className="calendar-icon">📅</span>
-              Select Date
-            </h2>
-            <div className="calendar-header">
-              <h3>{monthNames[currentMonth]} {currentYear}</h3>
-            </div>
-            <div className="calendar-grid">
-              <div className="weekday-header">
-                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                  <div key={day} className="weekday">{day}</div>
-                ))}
-              </div>
-              <div className="days-grid">
-                {generateCalendar().map((dayData, index) => (
-                  <div
-                    key={index}
-                    className={`calendar-day ${
-                      dayData?.isAvailable ? 'available' : 'unavailable'
-                    } ${
-                      selectedDate === dayData?.dateString ? 'selected' : ''
-                    }`}
-                    onClick={() => {
-                      if (dayData?.isAvailable) {
-                        setSelectedDate(dayData.dateString)
-                      }
-                    }}
-                  >
-                    {dayData?.day || ''}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Time Slots */}
-            {selectedDate && (
-              <div className="time-slots">
-                <h3>Select Time</h3>
-                <div className="time-grid">
-                  {timeSlots.map(time => (
-                    <button
-                      key={time}
-                      className={`time-slot ${selectedTime === time ? 'selected' : ''}`}
-                      onClick={() => setSelectedTime(time)}
-                    >
-                      {time}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
+        {/* Simple senior-friendly booking (dummy Calendly) */}
+        <div className="simple-booking">
+          <p className="simple-note">Pick a time that works for you. No account needed.</p>
+          <div className="calendly-embed">
+            <iframe
+              title="Schedule a Free Session"
+              src="https://calendly.com/senior-lock/free-session?hide_event_type_details=1&hide_gdpr_banner=1"
+              width="100%"
+              height="720"
+              style={{ border: '0', borderRadius: '12px', background: 'rgba(255,255,255,0.05)' }}
+            />
           </div>
-
-          {/* Form Section */}
-          <div className="form-section">
-            <h2 className="section-title">
-              <span className="form-icon">🛡️</span>
-              Your Information
-            </h2>
-            <form onSubmit={handleSubmit} className="booking-form">
-              <div className="form-group">
-                <label htmlFor="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  required
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  required
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  required
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="experience">Digital Security Experience</label>
-                <select
-                  id="experience"
-                  value={formData.experience}
-                  onChange={(e) => handleInputChange('experience', e.target.value)}
-                  required
-                >
-                  <option value="">Select your experience level</option>
-                  <option value="beginner">Beginner - New to digital security</option>
-                  <option value="intermediate">Intermediate - Some knowledge</option>
-                  <option value="advanced">Advanced - Experienced user</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="concerns">Primary Security Concerns</label>
-                <textarea
-                  id="concerns"
-                  value={formData.concerns}
-                  onChange={(e) => handleInputChange('concerns', e.target.value)}
-                  placeholder="Describe your main digital security concerns (scams, AI threats, privacy, etc.)"
-                  rows={4}
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="submit-button"
-                disabled={!selectedDate || !selectedTime}
-              >
-                <span className="submit-text">Schedule AI-Enhanced Consultation</span>
-                <span className="submit-glow"></span>
-              </button>
-            </form>
-          </div>
+          <a
+            className="submit-button simple-cta"
+            href="https://calendly.com/senior-lock/free-session"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Setup a Free Session
+          </a>
         </div>
       </div>
 
@@ -276,6 +159,40 @@ const BookingPage: React.FC = () => {
           grid-template-columns: 1fr 1fr;
           gap: 3rem;
           align-items: start;
+        }
+
+        .simple-booking {
+          max-width: 900px;
+          margin: 0 auto 2rem auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(59, 130, 246, 0.3);
+          border-radius: 20px;
+          padding: 2rem;
+          backdrop-filter: blur(20px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .simple-note {
+          color: rgba(255, 255, 255, 0.85);
+          text-align: center;
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .calendly-embed iframe {
+          border: none;
+        }
+
+        .simple-cta {
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          width: 100%;
+          max-width: 360px;
         }
 
         .calendar-section, .form-section {
